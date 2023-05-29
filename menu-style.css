@@ -1,0 +1,301 @@
+#menu-menu-container{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+}
+#menu-container{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin-top: -10vh;
+  width: calc(36 * var(--measure));
+  height: calc(36 * var(--measure));
+  z-index:0;
+}
+.menu{
+  position: absolute;
+  place-self: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(10 * var(--measure));
+  height: calc(10 * var(--measure));
+  background-color: floralwhite;
+  border-radius: 50%;
+  border: medium dotted var(--blue2);
+  z-index: -1;
+}
+.menu > a{
+  text-align: center;
+  font-size: calc(2 * var(--measure));
+  font-family: Helvetica, sans-serif;
+  color: var(--blue2);
+}
+
+.menu:hover{
+  box-shadow: 0 0 var(--measure) var(--blue2);
+}
+
+.menu-options {
+  display: none;
+  position: absolute;
+  width: 80vw;
+  height: 50vh;
+  top: -20vh;
+  justify-content: space-around;
+  align-items: flex-start;
+  /* clip-path: path('m 255 135 c 0 -180 -255 -180 -255 0 l 30 0 c 0 -135 195 -135 195 0 l 30 0 z'); */
+  transform: translate(0, var(--measure));
+}
+
+.menu:hover .menu-options{
+  display: flex;
+}
+.menu-options:hover{
+  display: flex;
+}
+.box {
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--measure);
+  width: calc(10 * var(--measure));
+  height: calc(4 * var(--measure));
+  background-color: floralwhite;
+  border-radius: 10%;
+  border: medium dotted var(--blue2);
+}
+.box:hover{
+  background-color: #cdaff1;
+}
+.box > a {
+  text-align: center;
+  font-size: calc(1.5 * var(--measure));
+  font-family: Helvetica, sans-serif;
+  color: var(--blue2);
+  cursor: pointer;
+}
+.box > a:link {
+  text-decoration: none;
+}
+
+#el{
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center center;
+  position: absolute;
+  pointer-events: none;
+  width: calc(36 * var(--measure));
+  height: calc(36 * var(--measure));
+  transform: translate(26vw, 30vh);
+}
+.anchor{
+  width: calc(15 * var(--measure));
+  height: calc(15 * var(--measure));
+  position: relative;
+  top: calc(4 * var(--measure));
+  transform-origin: center;
+  display: grid;
+  place-items: center center;
+}
+
+.caseta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 24vh;
+  background-color: floralwhite;
+  border-radius: 5%;
+  border: thin solid var(--blue2);
+  position: relative;
+  opacity: 0%;
+  overflow: auto;
+  z-index: -2;
+}
+
+.anc1 .caseta{
+  left: -8vw;
+}
+.anc2 .caseta{
+  right: -8vw;
+}
+.anc3 .caseta{
+  left: -8vw;
+  bottom: 2vh;
+}
+.anc4 .caseta{
+  right: -8vw;
+  bottom: 2vh;
+}
+
+.box:hover .caseta, .caseta:hover, #el:hover .caseta{
+  opacity: 100%;
+}
+
+.box:hover #el, #el:hover{
+  display: grid;
+}
+
+.caseta p{
+  font-size: var(--measure);
+  opacity: 0%;
+  color: indigo;
+  font-family: Helvetica, sans-serif;
+  padding: var(--measure);
+  text-align: justify;
+}
+
+.caseta p > a{
+  font-style: italic;
+}
+.box:hover .caseta p{
+  opacity: 100%;
+}
+
+
+@media (min-width: 400px) and (min-height: 400px) and ((min-width: 800px) or (min-height: 800px)){
+
+  .menu{
+    border: thick solid var(--blue2);
+  }
+
+  .menu-options{
+    width: calc(19 * var(--measure));
+    height: calc(12 * var(--measure));
+    top: calc(-5 * var(--measure));
+  }
+
+  .box{
+    width: calc(5 * var(--measure));
+    height: calc(2 * var(--measure));
+    border: medium solid var(--blue2);
+  }
+  
+  .menu-options > .box:first-child{
+    transform: translate(0, calc(4 * var(--measure))) rotate(-60deg);
+  }
+  .menu-options > .box:last-child{
+    transform: translate(0, calc(4 * var(--measure))) rotate(60deg);
+  }
+
+  #el{
+    display: grid;
+    place-items: start end;
+    transform: rotate(60deg) translate(calc(6.4 * var(--measure)), calc(2.8 * var(--measure)));
+  }
+
+  .anchor{
+    width: calc(18 * var(--measure));
+    height: calc(18 * var(--measure));
+    top: 0;
+    transition: transform 3.5s;
+  }
+
+  .anc1 .caseta{
+    left: calc(8 * var(--measure));
+    top: calc(7 * var(--measure));
+  }
+  .anc2 .caseta{
+    right: calc(8 * var(--measure));
+    top: calc(7 * var(--measure));
+  }
+  .anc3 .caseta{
+    left: calc(8 * var(--measure));
+    bottom: calc(7 * var(--measure));
+  }
+  .anc4 .caseta{
+    right: calc(8 * var(--measure));
+    bottom: calc(7 * var(--measure));
+  }
+
+  .box:hover .anc1, .box:hover .anc4{
+    transform: rotate(-200deg);
+  }
+  .box:hover .anc1 .caseta, .box:hover .anc4 .caseta{
+    transform: rotate(200deg);
+  }
+  .box:hover .anc2, .box:hover .anc3{
+    transform: rotate(200deg);
+  }
+  .box:hover .anc2 .caseta, .box:hover .anc3 .caseta{
+    transform: rotate(-200deg); 
+  }
+
+  .caseta{
+    width: calc(2 * var(--measure));
+    height: calc(2 * var(--measure));
+    overflow: hidden;
+    transition: transform 3.5s, border 2s, width 3s, height 3s, opacity 0.1s;
+    transition-delay: 0s, 1s, 0.5s, 0.5s, 0.4s;
+  }
+
+  .box:hover .caseta, .caseta:hover{
+    width: calc(15 * var(--measure));
+    height: calc(15 * var(--measure));
+    border: thick solid var(--pink1);
+  }
+
+  .caseta p{
+    transition: opacity 2s;
+    transition-delay: 3.5s;
+  }
+
+  box:not(:hover) .caseta p::before{
+    visibility: hidden;
+  } 
+}/*media query end*/
+
+
+#palette{
+  position: absolute;
+  display: none; 
+  width: calc(15 * var(--measure));
+  height: calc(3 * var(--measure));
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 20%;
+  transform: translate(0, calc(-3 * var(--measure)));
+}
+#instructions{
+  position: absolute;
+  display: none;
+  font-size: calc(1.5 * var(--measure));
+  color: floralwhite;
+  text-shadow: 1px 1px 2px var(--pink1), 0 0 1em var(--blue3), 0 0 0.2em var(--blue2);
+  top: calc(-6 * var(--measure));
+}
+.box:hover #palette{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.box:hover #instructions{
+  display: block;
+}
+.spot{
+  width: calc(1.5 * var(--measure));
+  height: calc(1.5 * var(--measure));
+  transition: border 0.2s;
+  border: thin solid rgba(0, 0, 0, 0);
+}
+.sp0{
+  background-color: var(--blue2);
+}
+.sp1{
+  background-color: var(--purple2);
+}
+.sp2{
+  background-color: var(--blue3);
+}
+.sp3{
+  background-color: var(--pink1);
+}
+.sp4{
+  background-color: var(--pink2);
+}
+.selected-spot{
+  border: medium solid floralwhite;
+}

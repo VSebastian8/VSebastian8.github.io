@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8">
+    <meta name="autor" content="Sebastian Visan">
+    <meta name="description" content="Opinion Form">
+    <meta name="keywords" content="website review">
+      <title>Leave a (positive) Review</title>
+      <base href="D:/School/College/TechniciWeb/Proiect/Part2/">
+      <link rel="stylesheet" href="opinion-style.css" type="text/css">
+      <script src="patterns.js"></script>
+      <script src="opinion.js"></script>
+      <link rel="icon" href="res/opinion-favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id = "buttons-container">
+      <input type = "button" id = "rain" class = "press" value = "Rain">
+      <input type = "button" id = "opinion" class = "press" value = "Start the Review">
+      <input type = "button" id = "bubbles" class = "press" value = "Bubbles">  
+    </div>
+    <div id = "form-container">
+      <form id="formular" method="post" target="_self">
+        <fieldset>
+          <ul>
+            <li>
+              <label for="nickname">Nickname:</label>
+              <input type="text" id="nickname" name="user_nickname" minlength="3" maxlength="20" required>
+            </li>
+            <li>
+              <label for="favcolor">Favorite color:</label>
+              <input type="color" id="favcolor" name="usercolor" value = "#2BEECD">
+            </li>
+            <li>
+              <label for="guess">Guess a color(hex):</label>
+              <input type="text" id="guess" name="guessed_color" pattern = "#[0-9a-fA-F]{6}" required>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <ul>
+            <li>
+              <label for="rating">Give a rating:</label>
+              <input type="range" name="rating" id="rating" min="-1" max="12" step="1" value="10">
+              <p id = "selected_rating">selected: <output id="rating_value"></output></p>
+            </li>
+            <li> <a> What did you like about the project? </a>
+              <ul>
+              <li>
+                <label for="idea">The Idea</label>
+                <input type="checkbox" id="idea" name="idea_check">
+              </li>
+              <li>
+                <label for="colors">The Colors</label>
+                <input type="checkbox" id="colors" checked="checked" name="colors_check">
+              </li>
+              <li>
+                <label for="aesthetic">The Aesthetic</label>
+                <input type="checkbox" id="aesthetic" name="aesthetic_check">
+              </li>
+              <li>
+                <label for="popping">Popping the Bubbles</label>
+                <input type="checkbox" id="popping" name="popping_za_bubbles">
+              </li>
+              </ul>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <label for="comments"></label>
+          <textarea id="comments" name="comments" rows="4" cols="50" wrap="hard" placeholder="              ...Any other comments..."></textarea> 
+        </fieldset>
+        <div id="button-container">
+          <button id="final-button" type="submit">Share Your Opinion</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

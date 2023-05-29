@@ -1,0 +1,79 @@
+#rain-container{
+  display: flex;
+  align-self: center;
+  justify-content:space-between;
+  width: 100vw;
+  height: 10vh;
+}
+
+.raindrop{
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+.f1{
+  animation-name: fall1;
+}
+.f2{
+  animation-name: fall2;
+}
+.c1 {
+  background-color: var(--purple2);
+  opacity: 90%;
+}
+.c2 {
+  background-color: var(--pink1);
+  opacity: 50%;
+}
+.c3 {
+  background-color: var(--pink2);
+  opacity: 70%;
+}
+
+.raindrop:nth-child(4n + 2){
+  transform: translate(0vw, -10vh);
+  animation-delay: 2.5s;
+}
+.raindrop:nth-child(4n + 1){
+  transform: translate(0vw, -10vh);
+  animation-delay: 1s;
+}
+.raindrop:nth-child(4n + 3){
+  transform: translate(0vw, -10vh);
+  animation-delay: 0.3s;
+}
+.smol{
+  height: 0.8em;
+  width: 0.2em;
+  animation-duration: 4.2s;
+}
+.moderate{
+  height: 1.2em;
+  width: 0.3em;
+  animation-duration: 3.1s;
+}
+.chunky{
+  height: 1.5em;
+  width: 0.4em;
+  animation-duration: 1.8s;
+}
+
+@keyframes fall1 {
+  0%{
+    transform: translate(0vw, -10vh);
+    opacity: 100%;
+  }  
+  100%{
+    transform: translate(0vw, 140vh);
+    opacity: 40%;
+  }
+}
+@keyframes fall2 {
+  0%{
+    transform: translate(-4.5vw, -40vh);
+    opacity: 100%;
+  } 
+  100%{
+    transform: translate(-4.5vw, 110vh);
+    opacity: 50%;
+  }
+}

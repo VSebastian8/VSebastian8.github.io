@@ -1,0 +1,98 @@
+body{
+  --text: "A ";
+  background-color: rgb(31,164,159);
+  overflow: hidden;
+}
+main{
+  display: flex;
+  flex-direction: column;
+}
+.hat{
+  background-color: rgb(90,41,52);
+}
+.arrow{
+  width: 6vh;
+  height: 6vh;
+  background-color:rgb(245,156,4);
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  clip-path: polygon(0 50%, 50% 0, 50% 25%, 100% 25%, 100% 75%, 50% 75%, 50% 100%);
+}
+#score{
+  height: 6vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  background-color:rgb(245,156,4);
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+}
+a{
+  margin-right: 0.2vh;
+  font-size: 2vh;
+  font-family: Helvetica, sans-serif;
+  text-decoration: dashed;
+  color:aliceblue;
+}
+.arrow > a:hover{
+  font-size: 2.2vh;
+}
+
+#bubble-container{
+  margin-top: 20vh;
+  margin-left: -10vw;
+  width: 120vw;
+  height: 50vh;
+  background-color: rgb(31,164,159);
+}
+.bub {
+  width: 8vw;
+  opacity: 100%;
+}
+#tail{
+  display:flex;
+  justify-content: center;
+  width: 120vw;
+  height: 30vh;
+  margin-left: -10vw;
+  background-color: rgb(253,157,96);
+}
+#tail h2::before{
+  content: var(--text);
+}
+#tail h2{
+  height: 3.2vh;
+  font-size: 3vh;
+  color: whitesmoke;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+
+@media (max-height: 600px){
+  .arrow{
+    width: 12vh;
+    height: 12vh;
+  }
+  #score{
+    height: 12vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }    
+  #tail h2{
+    height: 3.2vh;
+    font-size: 3vh;
+  }
+  a{
+    margin-right: 0.2vh;
+    font-size: 4vh;
+  }
+  .arrow > a:hover{
+    font-size: 4.4vh;
+  } 
+  #tail h2{
+    height: 4.2vh;
+    font-size: 4vh;
+  }
+}
