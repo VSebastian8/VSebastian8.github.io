@@ -14,8 +14,7 @@ body {
 }
 #grad1 {
   height: 100vh;
-  background-image: linear-gradient(0deg, var(--blue2), var(--blue1), var(--blue1), var(--blue1));
-}
+ }
 main {
   display: flex;
   justify-content: center;
