@@ -19,38 +19,38 @@ main {
   display: flex;
   justify-content: center;
 }
-@media (min-width: 800px) {
+@media only screen and (min-width: 800px) {
   body{
   --measure: 1vw;
   background-color: #4942E4;  
   }
 }
-@media (max-width: 800px) and (min-width: 400px) and (min-height: 800px) {
+@media only screen and (max-width: 800px) and (min-width: 400px) and (min-height: 800px) {
   body{
   --measure: 1vh;  
   background-color: #f2369f;
   }
 }
 /*De aici nu mai merge stilul tabelului, facem ceva mai simplu*/
-@media (max-width: 800px) and (max-height: 800px){
+@media only screen and (max-width: 800px) and (max-height: 800px){
   body{
     --measure: 1.5vw;
     background-color: aqua;
     }
 }
-@media (max-width: 400px){
+@media only screen and (max-width: 400px){
   body{
     --measure: 1.5vh;
     background-color: red;
     }
 }
-@media (max-height: 400px){
+@media only screen and (max-height: 400px){
   body{
     --measure: 1.5vw;
     background-color: green;
     }
 }
-@media (max-height: 200px){
+@media only screen and(max-height: 200px){
   body{
     --measure: 2vw;
     }
